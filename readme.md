@@ -346,7 +346,6 @@ namespace ProjectName.SubNameSpace;
 class ClassName{
 	//class code
 }
-
 ```
 
 
