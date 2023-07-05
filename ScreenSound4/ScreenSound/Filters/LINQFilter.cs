@@ -39,4 +39,15 @@ internal class LinqFilter
             Console.WriteLine($"- {music.Name} by {music.Artist}");
         }
     }
+
+    public static void ShowAllMusicsByTonality(List<Music> musics, int tonalityKey)
+    {
+      List<Music> allMusicsByTonality = musics.Where(music=> music.Key == tonalityKey).ToList();
+        Console.WriteLine($"Musics in {Music.tonalities[tonalityKey]} ({allMusicsByTonality.Count})");
+        foreach(Music music in allMusicsByTonality)
+        {
+            Console.WriteLine($"- {music.Name} by {music.Artist}");
+        }
+    }
 }
+

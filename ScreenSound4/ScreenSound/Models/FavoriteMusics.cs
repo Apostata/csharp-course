@@ -3,12 +3,12 @@ using System.Text.Json;
 
 internal class FavoriteMusics
 {
-    public string? Nome { get; set; }
+    public string? Name { get; set; }
     public List<Music> Musics { get;}
 
     public FavoriteMusics(string name)
     {
-        Nome = name;
+        Name = name;
         Musics = new List<Music>();
     }
 
@@ -18,7 +18,7 @@ internal class FavoriteMusics
 
     public void ShowFavoriteMusics()
     {
-        Console.WriteLine($"Here is the favorite musics of {Nome??"Somebody"}:");
+        Console.WriteLine($"Here is the favorite musics of {Name??"Somebody"}:");
         foreach (Music music in Musics)
         {
             Console.WriteLine($"- {music.Name} by {music.Artist}");
@@ -27,9 +27,10 @@ internal class FavoriteMusics
     }
 
     public void GenerateAJsonFile() {             
-       string json = JsonSerializer.Serialize(this);
+        // string json = JsonSerializer.Serialize(this);
+        string json = JsonSerializer.Serialize( new { name = Name, musics = Musics});
         Console.WriteLine(json);
-        string fileName = $"{Nome?.ToLower()}-favorite-musics.json";
+        string fileName = $"{Name?.ToLower()}-favorite-musics.json";
         File.WriteAllText(fileName, json);
         Console.WriteLine($"File {fileName} generated successfully! in {Path.GetFullPath(fileName)}");
     }

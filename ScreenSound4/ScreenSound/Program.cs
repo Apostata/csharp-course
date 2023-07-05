@@ -14,15 +14,16 @@ try
     // LinqOrder.ShowAllArtistsOrdenedByName(musics);
     // LinqFilter.ShowAllArtistsByGenre(musics, "blues");
     // LinqFilter.ShowAllMusicsByArtist(musics, "Michael Jackson");
+    LinqFilter.ShowAllMusicsByTonality(musics, 1); // 1 = C#
 
-    FavoriteMusics favoriteMusicOfRene = new("Rene");
-    favoriteMusicOfRene.AddFavoriteMusic(musics[1]);
-    favoriteMusicOfRene.AddFavoriteMusic(musics[377]);
-    favoriteMusicOfRene.AddFavoriteMusic(musics[4]);
-    favoriteMusicOfRene.AddFavoriteMusic(musics[6]);
-    favoriteMusicOfRene.AddFavoriteMusic(musics[1467]);
-    favoriteMusicOfRene.ShowFavoriteMusics();
-    favoriteMusicOfRene.GenerateAJsonFile();
+    //FavoriteMusics favoriteMusicOfRene = new("Rene");
+    //favoriteMusicOfRene.AddFavoriteMusic(musics[1]);
+    //favoriteMusicOfRene.AddFavoriteMusic(musics[377]);
+    //favoriteMusicOfRene.AddFavoriteMusic(musics[4]);
+    //favoriteMusicOfRene.AddFavoriteMusic(musics[6]);
+    //favoriteMusicOfRene.AddFavoriteMusic(musics[1467]);
+    //favoriteMusicOfRene.ShowFavoriteMusics();
+    //favoriteMusicOfRene.GenerateAJsonFile();
     }
     catch(HttpRequestException e)
     {
